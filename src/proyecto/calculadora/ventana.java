@@ -14,8 +14,9 @@ public class ventana extends JFrame {
     JPanel panelini = new JPanel();
     JTextField txtvalor = new JTextField();
     JLabel lblresultado = new JLabel();
-    int valor = 0;
+    double valor = 0;
     char simbolo = ' ';
+    double val = 1;
 
     public ventana() {
         this.setVisible(true);
@@ -189,7 +190,7 @@ public class ventana extends JFrame {
                 if (txtvalor.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "ingrese el valor");
                 } else {
-                    valor += Integer.parseInt(txtvalor.getText());
+                    valor += Double.parseDouble(txtvalor.getText());
                     simbolo = '+';
 
                     txtvalor.setText("");
@@ -208,10 +209,10 @@ public class ventana extends JFrame {
                 if (txtvalor.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "ingrese el valor");
                 } else {
-                    if (valor == 0){
-                        valor = Integer.parseInt(txtvalor.getText());
+                    if (valor == 0) {
+                        valor = Double.parseDouble(txtvalor.getText());
                     } else {
-                        valor -= Integer.parseInt(txtvalor.getText());
+                        valor -= Double.parseDouble(txtvalor.getText());
                     }
                     simbolo = '-';
                     txtvalor.setText("");
@@ -232,10 +233,10 @@ public class ventana extends JFrame {
                 } else {
 
                     if (valor == 0) {
-                        valor = 0;
+                        val = Double.parseDouble(txtvalor.getText());
 
                     } else {
-                        valor *= Integer.parseInt(txtvalor.getText());
+                        val *= Double.parseDouble(txtvalor.getText());
 
                     }
                     simbolo = '*';
@@ -256,11 +257,11 @@ public class ventana extends JFrame {
                 if (txtvalor.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "ingrese el valor");
                 } else {
-                     if (valor == 0){
-                        valor = Integer.parseInt(txtvalor.getText());
+                    if (valor == 0) {
+                        valor = Double.parseDouble(txtvalor.getText());
                     } else {
-                        valor /= Integer.parseInt(txtvalor.getText());
-                    }
+                        valor /= Double.parseDouble(txtvalor.getText());
+
                     }
                     simbolo = '/';
                     txtvalor.setText("");
@@ -285,7 +286,7 @@ public class ventana extends JFrame {
                 } else if (simbolo == '/') {
                     resultado = valor / Double.parseDouble(txtvalor.getText());
                 } else if (simbolo == '*') {
-                    resultado = valor * Double.parseDouble(txtvalor.getText());
+                    resultado = val * Double.parseDouble(txtvalor.getText());
 
                 }
                 txtvalor.setText(String.valueOf(resultado));
